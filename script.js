@@ -2,7 +2,7 @@ const localData = localStorage.getItem('data')
 let extensionsData;
 
 const fetchData = function() {
-    return fetch('/data.json') // Return the Promise
+    return fetch('./data.json') // Return the Promise
         .then(response => {
             if (!response.ok);
             return response.json();
