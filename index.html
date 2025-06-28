@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  
+  
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+
+</head>
+<body class="">
+  <div class="Extension_container">
+    <header class="Extension_head">
+      <div class="extension_logo">
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1000.000000pt" height="1000.000000pt" viewBox="0 0 1000.000000 1000.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,1000.000000) scale(0.100000,-0.100000)"
+fill="currentColor" stroke="none">
+<path d="M3730 8580 c-321 -40 -592 -156 -830 -356 -41 -34 -389 -377 -773
+-762 l-699 -699 5 -424 c3 -384 6 -433 25 -517 64 -287 194 -538 379 -732 l85
+-90 -70 -74 c-184 -194 -312 -425 -377 -679 -40 -158 -45 -231 -45 -631 l0
+-382 727 -726 c469 -467 757 -747 809 -785 114 -84 223 -145 349 -196 177 -73
+319 -103 530 -113 394 -20 833 153 1122 442 l52 51 33 -35 c63 -66 205 -179
+291 -231 258 -156 503 -224 802 -224 251 0 434 41 665 149 213 100 248 130
+830 708 294 292 633 628 753 746 l217 214 0 341 c0 187 -5 383 -10 435 -36
+348 -161 631 -395 893 l-86 97 65 73 c196 215 312 427 376 682 41 163 50 279
+50 658 l0 342 -752 751 c-657 655 -765 759 -848 813 -190 126 -395 210 -605
+247 -136 24 -384 24 -520 0 -306 -55 -618 -217 -824 -430 l-45 -46 -75 73
+c-215 209 -491 349 -786 401 -112 20 -326 28 -425 16z m327 -805 c185 -44 364
+-175 459 -338 84 -143 104 -239 104 -495 l0 -189 -398 -394 c-831 -823 -841
+-832 -917 -871 -114 -59 -195 -79 -330 -85 -103 -5 -132 -2 -198 16 -261 71
+-454 258 -527 511 -19 63 -23 109 -27 284 l-6 208 599 600 c330 330 625 618
+658 640 75 52 172 95 249 112 84 19 257 19 334 1z m2251 0 c85 -20 174 -59
+246 -107 37 -25 295 -274 659 -637 l597 -595 0 -205 c0 -224 -9 -284 -60 -397
+-119 -265 -376 -434 -659 -434 -157 0 -287 37 -408 116 -36 23 -283 262 -660
+638 l-603 601 0 210 c0 238 11 298 77 433 65 132 226 280 371 341 119 49 314
+66 440 36z m-768 -2260 l515 -515 -518 -518 -517 -517 -517 517 -518 518 515
+515 c283 283 517 515 520 515 3 0 237 -232 520 -515z m-2442 -930 c86 -18 160
+-47 237 -92 44 -27 219 -195 673 -647 l612 -611 0 -183 c0 -217 -14 -301 -69
+-417 -77 -162 -187 -275 -343 -353 -107 -53 -188 -72 -319 -72 -164 0 -307 45
+-428 135 -25 18 -315 304 -645 633 l-598 599 4 209 c5 184 8 219 29 289 94
+310 374 521 696 524 45 1 113 -6 151 -14z m4130 0 c102 -21 174 -51 256 -106
+138 -92 241 -226 293 -384 25 -75 27 -93 31 -305 l3 -225 -613 -610 c-663
+-660 -661 -658 -823 -712 -62 -20 -106 -27 -197 -31 -149 -5 -236 13 -361 76
+-124 62 -252 187 -315 309 -70 134 -82 202 -82 442 l0 206 593 591 c325 325
+615 607 644 628 161 115 380 162 571 121z"/>
+</g>
+      </svg>
+      <h3 class="extension_title">Extension</h3>
+      </div>
+      <div id="extension_theme_toggler" class="extension_theme_toggler">
+        <img src="assets/images/icon-sun.svg" class="icon-sun">
+        <img src="assets/images/icon-moon.svg" class="icon-moon">
+      </div>
+    </header>
+    <section class="filters">
+      <h3>Extension List</h3>
+      <div class="filter_btns">
+        <button class="filter_btn" id="all_btn">All</button>
+        <button class="filter_btn" id="active_btn">Active</button>
+        <button class="filter_btn" id="Inactive_btn">Inactive</button>
+      </div>
+    </section>
+    <section class="extension_list" id="extension_list"></section>
+  </div>
+
+  <script src="script.js"></script>
+ 
+  
+</body>
+</html>
