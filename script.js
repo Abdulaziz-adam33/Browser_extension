@@ -1,8 +1,8 @@
 const localData = localStorage.getItem('data')
-let extensionsData;
+let extensionsData = JSON.parse(localData);
 
 const fetchData = function() {
-    return fetch('./data.json') // Return the Promise
+    return fetch('data.json') // Return the Promise
         .then(response => {
             if (!response.ok);
             return response.json();
@@ -92,7 +92,7 @@ const deleteItem = (itemName)=>{
     return currItem.name.trim().toLowerCase() === itemName.trim().toLowerCase()
 })
   extensionsData.splice(currentIndex, 1)
-   // localStorage.setItem('data', JSON.stringify(extensionsData))
+   localStorage.setItem('data', JSON.stringify(extensionsData))
    initializeUI()
   
 }
