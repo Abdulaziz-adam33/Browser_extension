@@ -4,8 +4,8 @@ let extensionsData = JSON.parse(localData);
 const fetchData = function() {
     return fetch('/data.json') // Return the Promise
         .then(response => {
-            if (!response.ok);
-            return response.json();
+            if (!response.ok){
+            return response.json()}
         })
         .then(data => {
           localStorage.setItem('data', JSON.stringify(data))
