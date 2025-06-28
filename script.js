@@ -1,18 +1,24 @@
-const localData = localStorage.getItem('data')
-let extensionsData = JSON.parse(localData);
+const localData = localStorage.getItem('data');
+let extensionsData = localData ? JSON.parse(localData) : [];
 
 const fetchData = function() {
-    return fetch('data.json') // Return the Promise
+    return fetch('data.json') // Changed path (no ./)
         .then(response => {
-            if (!response.ok);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
             return response.json();
         })
         .then(data => {
-          localStorage.setItem('data', JSON.stringify(data))
-            extensionsData = data; // Replace instead of push
-             // Load UI only after data is ready
+            localStorage.setItem('data', JSON.stringify(data));
+            extensionsData = data;
+            initializeUI(); // Initialize UI after data is loaded
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            console.error('Error:', error);
+            // Load UI even if fetch fails (using existing localStorage data if any)
+            initializeUI();
+        });
 };
 
 
@@ -183,11 +189,15 @@ all_btn.addEventListener('click', loadAllData)
 active_btn.addEventListener('click', loadActiveData)
 inactive_btn.addEventListener('click', loadInActiveData)
 
-if(extensionsData.length === 0){
-  fetchData();
-}else{
-  initializeUI();
+function initApp() {
+    if (!extensionsData || extensionsData.length === 0) {
+        fetchData(); // Fetch if no data exists
+    } else {
+        initializeUI(); // Use existing data
+    }
 }
+
+document.addEventListener('DOMContentLoaded', initApp);
 
 
 
