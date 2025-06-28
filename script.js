@@ -1,5 +1,5 @@
 const localData = localStorage.getItem('data')
-let extensionsData = JSON.parse(localData);
+let extensionsData;
 
 const fetchData = function() {
     return fetch('/data.json') // Return the Promise
@@ -9,7 +9,7 @@ const fetchData = function() {
         })
         .then(data => {
           localStorage.setItem('data', JSON.stringify(data))
-            // extensionsData = data; // Replace instead of push
+            extensionsData = data; // Replace instead of push
              // Load UI only after data is ready
         })
         .catch(error => console.error('Error:', error));
@@ -92,7 +92,7 @@ const deleteItem = (itemName)=>{
     return currItem.name.trim().toLowerCase() === itemName.trim().toLowerCase()
 })
   extensionsData.splice(currentIndex, 1)
-   localStorage.setItem('data', JSON.stringify(extensionsData))
+   // localStorage.setItem('data', JSON.stringify(extensionsData))
    initializeUI()
   
 }
